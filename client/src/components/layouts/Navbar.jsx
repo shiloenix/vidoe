@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-70" />
+      <div className="h-0.5 w-full bg-linear-to-r from-transparent via-amber-400 to-transparent opacity-70" />
 
       <div className="backdrop-blur-md bg-black/60 border-b border-amber-500/20">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
