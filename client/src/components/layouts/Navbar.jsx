@@ -4,7 +4,7 @@ import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/history", label: "History" },
+  { to: "/download", label: "Download" },
 ];
 
 const Navbar = () => {
