@@ -95,11 +95,11 @@ app.get("/formats", (req, res) => {
     try {
       const info = JSON.parse(Buffer.concat(chunks).toString());
       const raw = (info.formats || []).filter((f) => {
-        if (!f.ext || f.format_note === "storyboard") return false;
-        const hasBoth = f.acodec !== "none" && f.vcodec !== "none";
-        const isAudioOnly = f.vcodec === "none" && f.acodec !== "none";
-        return hasBoth || isAudioOnly;
-      });
+      if (!f.ext || f.format_note === "storyboard") return false;
+      const hasVideo = f.vcodec !== "none";
+      const hasAudio = f.acodec !== "none";
+      return hasVideo || hasAudio;
+    });
 
       const videoMap = new Map();
       for (const f of raw) {
