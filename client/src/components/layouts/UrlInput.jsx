@@ -29,7 +29,7 @@ const UrlInput = ({ onFetch, loading }) => {
             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
-            placeholder="paste video link…"
+            placeholder="Paste the link here"
             className="flex-1 bg-transparent font-mono text-sm text-white/80 placeholder-white/20 focus:outline-none py-4 tracking-wide"
           />
 
