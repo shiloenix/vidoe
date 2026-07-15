@@ -14,12 +14,6 @@ Download from 1800+ supported sites including YouTube, Twitter/X, Facebook, Inst
 ### Format selection
 Before downloading, VIDO fetches all available formats for the video and lets you choose exactly what you want — resolution, codec, file size. No blind downloading.
 
-### Video quality options
-Choose from all available resolutions: 144p up to 8K, organized and deduplicated so you always see the best stream per quality tier.
-
-### Audio extraction
-Download audio-only formats in their native codec (AAC, Opus, etc.) or convert directly to MP3 at best quality with a single click — no extra tools needed.
-
 ### Real-time progress
 A live progress bar shows download percentage, transfer speed, and ETA as the download happens — streamed in real time via SSE (Server-Sent Events).
 
@@ -29,11 +23,8 @@ Every completed download is logged locally with title, thumbnail, format, and ti
 ### No ads, no telemetry
 VIDO collects nothing. No analytics, no tracking, no third-party scripts. Your downloads stay between you and your machine.
 
-### Docker containerized
-VIDO ships as a Docker Compose stack. One command and it's running — no Node or Python setup required on the host.
-
-### Self-hosted
-You own the server. Downloads go straight to your machine's `~/Downloads` folder. Nothing passes through any third-party service.
+### Self-hosted Docker containerized
+It ships as a Docker Compose stack. One command and it's running — no Node or Python setup required on the host.
 
 ---
 
@@ -42,7 +33,7 @@ You own the server. Downloads go straight to your machine's `~/Downloads` folder
 | Layer | Technology |
 |---|---|
 | Frontend | React, Vite, Tailwind CSS |
-| Backend | Node.js (raw HTTP, no framework) |
+| Backend | Node.js |
 | Downloader | yt-dlp |
 | Streaming | Server-Sent Events (SSE) |
 | Containerization | Docker + Docker Compose |
