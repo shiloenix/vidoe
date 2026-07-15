@@ -25,14 +25,14 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
             <img
               src={info.thumbnail}
               alt=""
-              className="w-16 h-10 object-cover flex-shrink-0"
+              className="w-16 h-10 object-cover shrink-0"
               style={{
                 clipPath:
                   "polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px))",
               }}
             />
           )}
-          <p className="text-white/70 text-xs font-mono leading-snug line-clamp-2 flex-1">
+          <p className="text-white/70 text-xs leading-snug line-clamp-2 flex-1">
             {info.title}
           </p>
         </div>
@@ -49,18 +49,18 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
 
       <div className="bg-black/40 border border-amber-500/20 backdrop-blur-sm">
         <div className="flex items-center gap-3 px-4 py-2 border-b border-white/5 bg-white/2">
-          <span className="font-mono text-xs text-amber-500/60 tracking-widest uppercase">
+          <span className="text-xs text-amber-500/60 tracking-widest uppercase">
             Target acquired
           </span>
           <span className="flex-1 h-px bg-amber-500/10" />
-          <span className="font-mono text-xs text-white/20">
+          <span className="text-xs text-white/20">
             {info.formats?.length ?? 0} formats
           </span>
         </div>
 
         <div className="flex gap-4 p-4">
           {info.thumbnail && (
-            <div className="relative flex-shrink-0">
+            <div className="relative shrink-0">
               <img
                 src={info.thumbnail}
                 alt=""
@@ -83,7 +83,7 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               href={info.webpage_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 font-mono text-xs text-amber-500/60 hover:text-amber-400 transition-colors w-fit"
+              className="flex items-center gap-1 text-xs text-amber-500/60 hover:text-amber-400 transition-colors w-fit"
             >
               <TbExternalLink className="size-3" />
               source
@@ -103,7 +103,7 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
                 const first = (key === "video" ? videoFormats : audioFormats)[0];
                 if (first) setSelectedFormat(first.id);
               }}
-              className={`flex-1 flex items-center justify-center gap-2 py-2.5 font-mono text-xs tracking-widest uppercase transition-all
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 text-xs tracking-widest uppercase transition-all
                 ${
                   tab === key
                     ? "text-amber-300 bg-amber-500/8 border-b-2 border-amber-400"
@@ -129,17 +129,17 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
                 }`}
             >
               <span
-                className={`w-1.5 h-1.5 rounded-full flex-shrink-0 transition-all ${
+                className={`w-1.5 h-1.5 rounded-full shrink-0 transition-all ${
                   selectedFormat === f.id ? "bg-amber-400" : "bg-white/15"
                 }`}
               />
 
-              <span className="font-mono text-xs tracking-wider flex-1">
+              <span className="text-xs tracking-wider flex-1">
                 {f.label || f.id}
               </span>
 
               <span
-                className={`font-mono text-xs px-1.5 py-0.5 border ${
+                className={`text-xs px-1.5 py-0.5 border ${
                   selectedFormat === f.id
                     ? "border-amber-500/50 text-amber-400"
                     : "border-white/10 text-white/30"
@@ -149,19 +149,19 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
               </span>
 
               {f.resolution !== "audio only" && (
-                <span className="font-mono text-xs text-white/25 w-16 text-right">
+                <span className="text-xs text-white/25 w-16 text-right">
                   {f.resolution}
                 </span>
               )}
 
-              <span className="font-mono text-xs text-white/30 w-16 text-right">
+              <span className="text-xs text-white/30 w-16 text-right">
                 {f.filesizeLabel || "—"}
               </span>
             </button>
           ))}
 
           {displayedFormats.length === 0 && (
-            <p className="font-mono text-xs text-white/20 text-center py-6">
+            <p className="text-xs text-white/20 text-center py-6">
               No {tab} formats found
             </p>
           )}
@@ -171,7 +171,7 @@ const VideoCard = ({ info, onDownload, downloading, status }) => {
           <button
             onClick={() => onDownload(selectedFormat)}
             disabled={downloading || !selectedFormat}
-            className={`w-full flex items-center justify-center gap-3 py-3 font-mono text-xs tracking-[0.25em] uppercase
+            className={`w-full flex items-center justify-center gap-3 py-3 text-xs tracking-[0.25em] uppercase
               border transition-all duration-300 active:scale-[0.98]
               ${
                 downloading

@@ -12,7 +12,7 @@ const PLATFORM_LINKS = {
 const Footer = () => {
   return (
     <footer className="relative border-t border-amber-500/10 bg-black/90 backdrop-blur-sm">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-amber-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -24,17 +24,17 @@ const Footer = () => {
                 alt=""
                 className="h-8 w-auto"
               />
-              <span className="font-mono text-sm font-bold tracking-[0.2em] text-amber-400 uppercase">
+              <span className="text-sm font-bold tracking-[0.2em] text-amber-400 uppercase">
                 VIDO
               </span>
             </a>
-            <p className="font-mono text-xs text-white/30 tracking-widest uppercase">
+            <p className="text-xs text-white/30 tracking-widest uppercase">
               Multi-source video extraction system
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-2">
-            <p className="font-mono text-xs text-white/25 tracking-widest uppercase mb-1">
+            <p className="text-xs text-white/25 tracking-widest uppercase mb-1">
               Supported
             </p>
             <div className="flex items-center gap-3 flex-wrap justify-center">
@@ -44,7 +44,7 @@ const Footer = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-white/35 hover:text-amber-400/60 transition-colors"
+                  className="text-xs text-white/35 hover:text-amber-400/60 transition-colors"
                 >
                   {site}
                 </a>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col items-center md:items-end gap-1.5">
-            <p className="font-mono text-xs text-white/30 tracking-wider flex items-center gap-1.5">
+            <p className="text-xs text-white/30 tracking-wider flex items-center gap-1.5">
               Powered by
               <a  
                 href="https://github.com/yt-dlp/yt-dlp"
@@ -70,11 +70,11 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="font-mono text-xs text-white/20 tracking-wider">
+          <p className="text-xs text-white/20 tracking-wider">
             © 2026 VIDO — All rights reserved
           </p>
-          <p className="font-mono text-xs text-white/20 tracking-wider">
-            Always respect copyright and platform terms of service
+          <p className="text-xs text-white/20 tracking-wider">
+            Always respect copyright and platform terms of service according the MIT license
           </p>
         </div>
       </div>

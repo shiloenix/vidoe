@@ -172,7 +172,7 @@ const DownloadPage = () => {
           <div className="flex items-center gap-3">
             <TbHistory className="size-10 text-amber-400" />
           </div>
-          <p className="font-mono text-xs text-white/25 tracking-[0.2em] uppercase">
+          <p className="text-xs text-white/25 tracking-[0.2em] uppercase">
             {loading
               ? "Loading…"
               : `${items.length} extraction${items.length !== 1 ? "s" : ""} logged`}
@@ -190,13 +190,13 @@ const DownloadPage = () => {
 
               <div className="border border-amber-500/15 bg-black/40 backdrop-blur-sm divide-y divide-white/5">
                 <div className="flex items-center gap-3 px-4 py-2 bg-white/2">
-                  <span className="font-mono text-xs text-amber-500/40 tracking-widest uppercase flex-1">
+                  <span className="text-xs text-amber-500/40 tracking-widest uppercase flex-1">
                     Title
                   </span>
-                  <span className="font-mono text-xs text-amber-500/40 tracking-widest uppercase w-24 text-right hidden sm:block">
+                  <span className="text-xs text-amber-500/40 tracking-widest uppercase w-24 text-right hidden sm:block">
                     Status
                   </span>
-                  <span className="font-mono text-xs text-amber-500/40 tracking-widest uppercase w-20 text-right hidden sm:block">
+                  <span className="text-xs text-amber-500/40 tracking-widest uppercase w-20 text-right hidden sm:block">
                     When
                   </span>
                   <span className="w-16 flex justify-end">
@@ -235,18 +235,18 @@ const DownloadPage = () => {
                           </div>
                         )}
 
-                        <p className="font-mono text-xs text-white/60 group-hover:text-white/80 transition-colors flex-1 line-clamp-2 leading-relaxed min-w-0">
+                        <p className="text-xs text-white/60 group-hover:text-white/80 transition-colors flex-1 line-clamp-2 leading-relaxed min-w-0">
                           {item.title || "Unknown"}
                         </p>
 
                         <span
-                          className={`items-center justify-end gap-1.5 font-mono text-xs w-24 text-right hidden sm:flex shrink-0 ${meta.color}`}
+                          className={`items-center justify-end gap-1.5 text-xs w-24 text-right hidden sm:flex shrink-0 ${meta.color}`}
                         >
                           <Icon className={`size-3.5 shrink-0 ${meta.spin && !isPaused ? "animate-spin" : ""}`} />
                           <span className="leading-none">{meta.label}</span>
                         </span>
 
-                        <span className="font-mono text-xs text-white/25 w-20 text-right hidden sm:block shrink-0">
+                        <span className="text-xs text-white/25 w-20 text-right hidden sm:block shrink-0">
                           {timeAgo(item.updatedAt || item.createdAt)}
                         </span>
 
@@ -294,7 +294,7 @@ const DownloadPage = () => {
           ) : (
             <div className="flex flex-col items-center gap-4 py-20">
               <TbBox className="size-10 text-white/10" />
-              <p className="font-mono text-xs text-white/20 tracking-widest uppercase">
+              <p className="text-xs text-white/20 tracking-widest uppercase">
                 {loading ? "Loading…" : "No downloads yet"}
               </p>
             </div>

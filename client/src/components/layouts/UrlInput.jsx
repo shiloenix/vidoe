@@ -19,7 +19,7 @@ const UrlInput = ({ onFetch, loading }) => {
         <span className={`absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 transition-colors duration-300 ${focused ? "border-amber-400" : "border-white/20"}`} />
 
         <div className="flex items-center bg-white/3 border border-white/10 backdrop-blur-sm">
-          <span className="font-mono text-xs text-amber-500/70 pl-4 pr-3 select-none tracking-widest whitespace-nowrap drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
+          <span className="text-xs text-amber-500/70 pl-4 pr-3 select-none tracking-widest whitespace-nowrap drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
             URL://
           </span>
 
@@ -30,13 +30,13 @@ const UrlInput = ({ onFetch, loading }) => {
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
             placeholder="Paste the link here"
-            className="flex-1 bg-transparent font-mono text-sm text-white/80 placeholder-white/20 focus:outline-none py-4 tracking-wide"
+            className="flex-1 bg-transparent text-sm text-white/80 placeholder-white/20 focus:outline-none py-4 tracking-wide"
           />
 
           <button
             onClick={handleSubmit}
             disabled={!url.trim() || loading}
-            className="flex items-center gap-2 px-5 py-4 font-mono text-xs tracking-widest uppercase
+            className="flex items-center gap-2 px-5 py-4 text-xs tracking-widest uppercase
               bg-amber-500/10 hover:bg-amber-500/20 border-l border-amber-500/20
               text-amber-400 hover:text-amber-300
               disabled:opacity-30 disabled:cursor-not-allowed
@@ -52,7 +52,7 @@ const UrlInput = ({ onFetch, loading }) => {
         </div>
       </div>
 
-      <p className="font-mono text-xs text-white/20 tracking-wider">
+      <p className="text-xs text-white/20 tracking-wider">
         [
         <a
           href="https://www.youtube.com"

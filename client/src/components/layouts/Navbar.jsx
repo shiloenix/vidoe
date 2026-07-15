@@ -31,7 +31,7 @@ const Navbar = () => {
                 key={to}
                 to={to}
                 className={({ isActive }) =>
-                  `relative px-4 py-1.5 font-mono text-xs tracking-widest uppercase transition-all duration-200
+                  `relative px-4 py-1.5 text-xs tracking-widest uppercase transition-all duration-200
                   ${isActive ? "text-amber-300" : "text-white/40 hover:text-white/80"}`
                 }
               >
@@ -63,7 +63,7 @@ const Navbar = () => {
                 to={to}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `font-mono text-xs tracking-widest uppercase py-2 transition-colors
+                  `text-xs tracking-widest uppercase py-2 transition-colors
                   ${isActive ? "text-amber-300" : "text-white/40"}`
                 }
               >

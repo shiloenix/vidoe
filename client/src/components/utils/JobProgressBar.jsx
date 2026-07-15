@@ -47,7 +47,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
             {paused && <span className="relative inline-flex rounded-full size-1.5 bg-amber-300/50" />}
 
             <span
-              className={`font-mono text-xs tracking-widest uppercase ${
+              className={`text-xs tracking-widest uppercase ${
                 done
                   ? "text-emerald-400"
                   : error
@@ -63,7 +63,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
 
           <div className="flex items-center gap-2">
             <span
-              className={`font-mono text-xs font-bold ${
+              className={`text-xs font-bold ${
                 done ? "text-emerald-400" : error ? "text-red-400" : "text-amber-300"
               }`}
             >
@@ -74,7 +74,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
               <button
                 onClick={onPause}
                 title={paused ? "Resume" : "Pause"}
-                className="flex items-center gap-1 px-2 py-1 font-mono text-xs tracking-widest uppercase border border-amber-500/30 text-amber-400/70 hover:text-amber-300 hover:border-amber-400/50 transition-all"
+                className="flex items-center gap-1 px-2 py-1 text-xs tracking-widest uppercase border border-amber-500/30 text-amber-400/70 hover:text-amber-300 hover:border-amber-400/50 transition-all"
               >
                 {paused ? <TbPlayerPlay className="size-3" /> : <TbPlayerPause className="size-3" />}
               </button>
@@ -84,7 +84,7 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
               <button
                 onClick={onCancel}
                 title="Cancel"
-                className="flex items-center gap-1 px-2 py-1 font-mono text-xs tracking-widest uppercase border border-red-500/30 text-red-400/70 hover:text-red-300 hover:border-red-400/50 transition-all"
+                className="flex items-center gap-1 px-2 py-1 text-xs tracking-widest uppercase border border-red-500/30 text-red-400/70 hover:text-red-300 hover:border-red-400/50 transition-all"
               >
                 <TbX className="size-3" />
               </button>
@@ -111,16 +111,16 @@ const JobProgress = ({ percent = 0, speed, eta, status, onCancel, onPause }) => 
         {downloading && (
           <div className="flex items-center gap-5">
             <div>
-              <p className="font-mono text-xs text-white/25 uppercase tracking-widest mb-0.5">Speed</p>
-              <p className="font-mono text-xs text-white/60">{paused ? "—" : (speed ?? "—")}</p>
+              <p className="text-xs text-white/25 uppercase tracking-widest mb-0.5">Speed</p>
+              <p className="text-xs text-white/60">{paused ? "—" : (speed ?? "—")}</p>
             </div>
             <div>
-              <p className="font-mono text-xs text-white/25 uppercase tracking-widest mb-0.5">ETA</p>
-              <p className="font-mono text-xs text-white/60">{paused ? "—" : (eta ?? "—")}</p>
+              <p className="text-xs text-white/25 uppercase tracking-widest mb-0.5">ETA</p>
+              <p className="text-xs text-white/60">{paused ? "—" : (eta ?? "—")}</p>
             </div>
             <div className="flex-1 text-right">
-              <p className="font-mono text-xs text-white/25 uppercase tracking-widest mb-0.5">Status</p>
-              <p className={`font-mono text-xs ${paused ? "text-amber-300/40" : "text-amber-500/60 animate-pulse"}`}>
+              <p className="text-xs text-white/25 uppercase tracking-widest mb-0.5">Status</p>
+              <p className={`text-xs ${paused ? "text-amber-300/40" : "text-amber-500/60 animate-pulse"}`}>
                 {paused ? "Paused" : "Live"}
               </p>
             </div>

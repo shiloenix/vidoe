@@ -28,16 +28,16 @@ const ConfirmModal = ({ title, format, loading, onCancel, onConfirm }) => (
       <span className="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-amber-500/60" />
 
       <div className="bg-[#0a0f14] border border-amber-500/20 p-6 flex flex-col gap-4">
-        <p className="font-mono text-xs text-amber-500/60 tracking-widest uppercase">Confirm</p>
+        <p className="text-xs text-amber-500/60 tracking-widest uppercase">Confirm</p>
 
         <p className="text-white/80 text-sm leading-snug line-clamp-2">{title}</p>
 
         <div className="flex items-center gap-2 px-3 py-2 bg-amber-500/5 border border-amber-500/15 w-fit">
-          <span className="font-mono text-xs text-amber-300 tracking-wide">
+          <span className="text-xs text-amber-300 tracking-wide">
             {format?.label || format?.id}
           </span>
           {format?.filesizeLabel && (
-            <span className="font-mono text-xs text-white/30">· {format.filesizeLabel}</span>
+            <span className="text-xs text-white/30">· {format.filesizeLabel}</span>
           )}
         </div>
 
@@ -46,14 +46,14 @@ const ConfirmModal = ({ title, format, loading, onCancel, onConfirm }) => (
           <button
             onClick={onCancel}
             disabled={loading}
-            className="flex-1 py-2.5 font-mono text-xs tracking-widest uppercase border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 transition-all disabled:opacity-40"
+            className="flex-1 py-2.5 text-xs tracking-widest uppercase border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 transition-all disabled:opacity-40"
           >
             Cancel
           </button>
           <button
             onClick={onConfirm}
             disabled={loading}
-            className="flex-1 flex items-center justify-center gap-2 py-2.5 font-mono text-xs tracking-widest uppercase border border-amber-500/50 text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 transition-all disabled:opacity-50"
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 text-xs tracking-widest uppercase border border-amber-500/50 text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 transition-all disabled:opacity-50"
           >
             {loading ? <TbLoader2 className="size-3.5 animate-spin" /> : null}
             {loading ? "Starting…" : "Download"}
@@ -146,11 +146,11 @@ const Download = () => {
       <div className="relative z-10 flex flex-col items-center px-4 pt-25 pb-20 gap-10">
         <div className="flex flex-col items-center gap-3 text-center">
           <img src="/vex.svg" alt="" className="h-25 w-auto" />
-          <h1 className="font-mono text-3xl md:text-5xl font-bold tracking-tight">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
             <span className="text-white/90">VI</span>
             <span className="text-amber-400">DO</span>
           </h1>
-          <p className="font-mono text-xs text-white/25 tracking-[0.2em] uppercase">
+          <p className="text-xs text-white/25 tracking-[0.2em] uppercase">
             Multi-source video extraction system
           </p>
         </div>
@@ -159,7 +159,7 @@ const Download = () => {
 
         {fetchError && (
           <div className="w-full max-w-2xl border border-red-500/30 bg-red-500/5 px-4 py-3">
-            <p className="font-mono text-xs text-red-400 tracking-wider">✕ {fetchError}</p>
+            <p className="text-xs text-red-400 tracking-wider">✕ {fetchError}</p>
           </div>
         )}
 
@@ -186,7 +186,7 @@ const Download = () => {
       {toast && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
           <div
-            className={`flex items-center gap-3 px-4 py-3 border backdrop-blur-sm font-mono text-xs tracking-wide
+            className={`flex items-center gap-3 px-4 py-3 border backdrop-blur-sm text-xs tracking-wide
               ${
                 toast.type === "ok"
                   ? "border-emerald-400/30 bg-emerald-500/10 text-emerald-300"
