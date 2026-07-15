@@ -121,6 +121,9 @@ app.get("/formats", (req, res) => {
           resolution: f.resolution || `${f.width}x${f.height}`,
           filesize: f.filesize || f.filesize_approx || null,
           filesizeLabel: formatSize(f.filesize || f.filesize_approx),
+          // NOTE: surfaced so the frontend can show "audio will be merged"
+          // for video-only DASH formats (almost always true above 720p).
+          hasAudio: f.acodec !== "none" && f.acodec != null,
         }));
 
       const audioMap = new Map();
@@ -201,8 +204,25 @@ function startDownloadProcess(job) {
     "--newline", "--progress", "--no-quiet", "--no-playlist", "--no-part", "--no-colors",
     "-o", path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s"),
   ];
-  if (isMp3) args.push("-x", "--audio-format", "mp3", "--audio-quality", "0");
-  else if (job.formatId) args.push("-f", job.formatId);
+
+  if (isMp3) {
+    args.push("-x", "--audio-format", "mp3", "--audio-quality", "0");
+  } else if (job.formatId) {
+    // FIX: the previously selected format ID alone is very often a
+    // video-only DASH stream (true for basically everything 1080p+ on
+    // YouTube), which has no audio track at all. Requesting
+    // "<id>+bestaudio" tells yt-dlp to grab that video stream AND the
+    // best available audio stream and mux them together with ffmpeg.
+    // The "/best" fallback covers the (rarer) case where the chosen ID
+    // is already a combined audio+video format, or bestaudio pairing
+    // fails for some reason - it'll fall back to a single best combined
+    // stream instead of erroring out.
+    args.push(
+      "-f", `${job.formatId}+bestaudio/best`,
+      "--merge-output-format", "mp4"
+    );
+  }
+
   args.push(job.url);
 
   const proc = spawn("yt-dlp", args, {
@@ -228,7 +248,7 @@ function startDownloadProcess(job) {
       return;
     }
 
-    const dest = t.match(/\[(?:download|ExtractAudio)\] Destination:\s+(.+)/);
+    const dest = t.match(/\[(?:download|ExtractAudio|Merger)\] (?:Destination|Merging formats into):?\s+"?(.+?)"?$/);
     if (dest) job.filepath = dest[1];
 
     emit({ type: "log", message: t });
